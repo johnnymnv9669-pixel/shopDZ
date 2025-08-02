@@ -54,7 +54,7 @@
   <div class="container" id="product-list">Loading...</div>
 
   <script>
-    const API_URL = "(https://script.google.com/macros/s/AKfycbyKgC33i4_Faj88RehuY3I6hM2Q53PV8b7H8Bq8kaTt_7CIu1nZJOJBmZoUhp7-vQ3j/exec)"; // ใส่ลิงก์ Web App ของคุณที่นี่
+    const API_URL = "( https://script.google.com/macros/s/AKfycbybewxJ6t17rGGFlHb50uEBIR1CGpNdgOeULZ0-__7EalxcPURvewqKaJeWGrLfnGVT/exec )"; // ใส่ลิงก์ Web App ของคุณที่นี่
 
     fetch(API_URL)
       .then(res => res.json())
