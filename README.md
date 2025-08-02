@@ -54,7 +54,7 @@
   <div class="container" id="product-list">Loading...</div>
 
   <script>
-    const API_URL = "https://script.google.com/macros/s/AKfycbwP_K95RMjzJp6q1bUSfzZkqPFNbT6iwh7iu4NxZTA0mAsZBAoUpUQOZcV1uevAaQw4/exec";
+    const API_URL = "https://script.google.com/macros/s/AKfycbwOa8oJNvpSQMZ-_G68kkmNdyudjcFjrw5vqWVWGGbNPAZCP1mmDW7kIy5oeF90vcU6/exec";
 
     fetch(API_URL)
       .then(res => {
