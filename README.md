@@ -54,19 +54,15 @@
   <div class="container" id="product-list">Loading...</div>
 
   <script>
-    const API_URL = "(https://script.google.com/macros/s/AKfycbwP_K95RMjzJp6q1bUSfzZkqPFNbT6iwh7iu4NxZTA0mAsZBAoUpUQOZcV1uevAaQw4/exec)"; // ใส่ลิงก์ Web App ของคุณที่นี่
+    const API_URL = "https://script.google.com/macros/s/AKfycbwP_K95RMjzJp6q1bUSfzZkqPFNbT6iwh7iu4NxZTA0mAsZBAoUpUQOZcV1uevAaQw4/exec";
 
-    fetch("https://script.google.com/macros/s/AKfycbwP_K95RMjzJp6q1bUSfzZkqPFNbT6iwh7iu4NxZTA0mAsZBAoUpUQOZcV1uevAaQw4/exec")
-  .then(res => {
-    if (!res.ok) throw new Error("Network response was not OK");
-    return res.json();
-  })
-  .then(data => {
-    console.log("✅ ได้ข้อมูล:", data);
-  })
-  .catch(err => {
-    console.error("❌ โหลดข้อมูลผิดพลาด:", err);
-  });
+    fetch(API_URL)
+      .then(res => {
+        if (!res.ok) throw new Error("Network response was not OK");
+        return res.json();
+      })
+      .then(data => {
+        const container = document.getElementById("product-list");
         container.innerHTML = "";
         data.forEach(item => {
           container.innerHTML += `
@@ -81,7 +77,7 @@
       })
       .catch(err => {
         document.getElementById("product-list").innerHTML = "เกิดข้อผิดพลาดในการโหลดข้อมูล";
-        console.error(err);
+        console.error("❌ โหลดข้อมูลผิดพลาด:", err);
       });
   </script>
 
