@@ -54,12 +54,19 @@
   <div class="container" id="product-list">Loading...</div>
 
   <script>
-    const API_URL = ("https://script.google.com/macros/s/AKfycbyi-lQ-A1Wozydizp-iZYLIrpP11JCgY3DVcvF0muRhasPs1SGtOac75FJQfJmD1zaW/exec"); // ใส่ลิงก์ Web App ของคุณที่นี่
+    const API_URL = "(https://script.google.com/macros/s/AKfycbwP_K95RMjzJp6q1bUSfzZkqPFNbT6iwh7iu4NxZTA0mAsZBAoUpUQOZcV1uevAaQw4/exec)"; // ใส่ลิงก์ Web App ของคุณที่นี่
 
-    fetch(API_URL)
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById("product-list");
+    fetch("https://script.google.com/macros/s/AKfycbwP_K95RMjzJp6q1bUSfzZkqPFNbT6iwh7iu4NxZTA0mAsZBAoUpUQOZcV1uevAaQw4/exec")
+  .then(res => {
+    if (!res.ok) throw new Error("Network response was not OK");
+    return res.json();
+  })
+  .then(data => {
+    console.log("✅ ได้ข้อมูล:", data);
+  })
+  .catch(err => {
+    console.error("❌ โหลดข้อมูลผิดพลาด:", err);
+  });
         container.innerHTML = "";
         data.forEach(item => {
           container.innerHTML += `
